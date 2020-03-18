@@ -1,13 +1,20 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  title: MyString1
   description: MyText
-  image_url: MyString
+  image_url: 1.jpg
   price: 9.99
 
 two:
-  title: MyString
+  title: MyString2
   description: MyText
-  image_url: MyString
+  image_url: 1.jpg
   price: 9.99
+
+synix:
+  title:           Brand new synix32" Digital TV
+  description:
+    hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+  price:            60.50
+  image_url:        3.jpg
