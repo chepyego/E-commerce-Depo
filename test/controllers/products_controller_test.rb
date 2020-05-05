@@ -9,6 +9,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get products_url
     assert_response :success
+    assert_select 'nav.side_nav a', minimum:4
+    assert_select 'main ul.catalog li', 3
+    assert_select 'h2', 'Brand new synix32" Digital TV'
+    assert_select '.price',/\ksh[,\d]+\.d\d/
+
   end
 
   test "should get new" do
@@ -46,4 +51,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to products_url
   end
+   
+    test "should manage product" do
+      assert
+    end
+
 end

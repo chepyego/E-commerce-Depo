@@ -1,0 +1,32 @@
+<% if notice%>
+  <aside id="notice"><%notice%></aside>
+
+<% end %>
+
+<h1>Mwembe Tayari catalogue</h1>
+
+<ul class="catalog">
+<% cache @products do %>
+   <% @products.each do |product|%>
+     <% cache product do %>
+    
+
+     <li>
+     <%= image_tag(product.image_url)%>
+     <h2><%= product.title %></h2>
+     <p>
+    #sanitize allow us to add styling to html
+       <%= sanitize(product.description)%>
+     
+     </p>
+     <div class="price">
+        <%= number_to_currency(product.price, :unit =>"ksh")%>
+     </div>
+     
+     </li>
+      <% end %>
+     <%end %>
+  <% end %>
+
+
+</ul>
