@@ -47,12 +47,12 @@ header.main{
 
     nav {
         
-        padding-bottom: 1em;
+        padding-bottom: 2em;
         background-color:#44a50c11;
         text-align: center;
         @media(min-width: 30em){
             text-align: left; //desktop nav is left-aligned
-            padding: 1em;
+            padding: 2em;
         }
         ul{
             list-style: none;
@@ -91,4 +91,18 @@ header.main{
     margin-bottom: 1em;
     padding: 1em 1.414em;
     text-align: center;
+}
+#cart {
+    article{
+        h2 {
+            margin-top:  0;
+        }
+        background: white;
+        border-radius: 0.5em;
+        margin: 1em;
+        padding: 1.414em;
+        @media(min-width: 30em) {
+            margin: 0; //desktop dosen't need this margin
+        }
+    }
 }

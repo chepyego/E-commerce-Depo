@@ -23,13 +23,21 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
 
     assert_select 'h2', 'Your Mwembe Tayari  Cart'
-    assert_select 'li', "1 \u00D7  Synix"
+    # assert_select 'li', "1 \u00D7  Synix"
+    assert_select 'td', " synix"
   end
 
   test "should show line_item" do
     get line_item_url(@line_item)
     assert_response :success
   end
+   test "should create line_item via ajax" do
+    assert_difference('LineItem.count') do
+      post line_items_url, params: {product_id: products(:ruby).id },
+      xhr: true
+    end
+    assert_response :success
+    assert_match /<tr class=\\"line-item-highlight/, @response.body   end
 
   test "should get edit" do
     get edit_line_item_url(@line_item)
